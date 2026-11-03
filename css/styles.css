@@ -1,0 +1,53 @@
+/* ANIMACIONES GLOBALES */
+body {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ESTILOS Y EFECTOS DE LAS TARJETAS (CARDS) */
+.card {
+    border-radius: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
+}
+
+/* EFECTOS EN LOS CONTADORES (BADGES) */
+.badge {
+    border-radius: 50rem; /* Vuelve los badges completamente redondeados (tipo píldora) */
+    padding: 0.4em 0.65em; /* Añade un respiro interno para que se vean proporcionados */
+    transition: all 0.2s ease-in-out;
+}
+
+.badge:hover {
+    transform: scale(1.05);
+    filter: brightness(1.15);
+    cursor: pointer;
+}
+
+/* 4. ESTILOS DE CAMPOS DEL FORMULARIO (INPUTS Y TEXTAREAS) */
+.form-control {
+    border-radius: 0.95rem; /* Ajusta la curvatura de las esquinas de los espacios del formulario */
+}
+
+
+/* ESTILOS DE BOTONES MÁS REDONDOS */
+.btn {
+    border-radius: 50rem; /* Vuelve los botones tipo píldora/redondos */
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
