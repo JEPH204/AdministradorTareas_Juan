@@ -1,5 +1,14 @@
-/* ANIMACIONES GLOBALES */
+/* 1. PALETA DE COLORES UI (Estilo Nocturno) */
+
+:root {
+    --fondo-pagina: #1b1e2b;   /* El tono gris/azulado para el fondo general de la página */
+    --fondo-tarjetas: #13151f;  /* El azul muy oscuro / negruzco para el calendario, formulario y cards */
+}
+
+/* Aplicar el color de fondo personalizado al body */
+
 body {
+    background-color: var(--fondo-pagina) !important;
     animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -15,8 +24,11 @@ body {
 }
 
 
-/* ESTILOS Y EFECTOS DE LAS TARJETAS (CARDS) */
+/* 2. ESTILOS Y EFECTOS DE LAS TARJETAS (CARDS) */
+
 .card {
+    background-color: var(--fondo-tarjetas) !important; /* Asigna el azul oscuro a las tarjetas */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Borde */
     border-radius: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -26,10 +38,12 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
 }
 
-/* EFECTOS EN LOS CONTADORES (BADGES) */
+
+/* 3. EFECTOS EN LOS CONTADORES (BADGES) */
+
 .badge {
     border-radius: 50rem; /* Vuelve los badges completamente redondeados (tipo píldora) */
-    padding: 0.4em 0.65em; /* Añade un respiro interno para que se vean proporcionados */
+    padding: 0.4em 0.65em; /* Añade espacio para que se vean proporcionados */
     transition: all 0.2s ease-in-out;
 }
 
@@ -39,13 +53,16 @@ body {
     cursor: pointer;
 }
 
+
 /* 4. ESTILOS DE CAMPOS DEL FORMULARIO (INPUTS Y TEXTAREAS) */
+
 .form-control {
     border-radius: 0.95rem; /* Ajusta la curvatura de las esquinas de los espacios del formulario */
 }
 
 
-/* ESTILOS DE BOTONES MÁS REDONDOS */
+/* 5. ESTILOS DE BOTONES MÁS REDONDOS */
+
 .btn {
     border-radius: 50rem; /* Vuelve los botones tipo píldora/redondos */
     padding-left: 1.25rem;
