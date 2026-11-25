@@ -1,4 +1,4 @@
-# Planificador de Tareas - Sprint 1
+# Planificador de Tareas
 
 ## Descripción del Proyecto
 El Planificador de Tareas es una herramienta web orientada a la organización personal y de equipos, construida bajo un entorno de diseño moderno (*Dark Mode*). Cuenta con un panel de control interactivo que incluye un calendario, un formulario de registro con validaciones de campos y fechas en tiempo real, contadores de estado y una sección dinámica de tarjetas de tareas.
