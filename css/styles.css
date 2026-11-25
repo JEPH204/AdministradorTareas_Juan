@@ -1,12 +1,10 @@
-/* 1. PALETA DE COLORES UI (Estilo Nocturno) */
-
+/* PALETA DE COLORES UI (Estilo Nocturno) */
 :root {
-    --fondo-pagina: #1b1e2b;   /* El tono gris/azulado para el fondo general de la página */
-    --fondo-tarjetas: #13151f;  /* El azul muy oscuro / negruzco para el calendario, formulario y cards */
+    --fondo-pagina: #1b1e2b;   /* Color gris/azulado del fondo general de la página */
+    --fondo-tarjetas: #13151f; /* Color azul muy oscuro para contenedores y tarjetas */
 }
 
-/* Aplicar el color de fondo personalizado al body */
-
+/* Fondo general y animación suave de entrada al cargar la vista */
 body {
     background-color: var(--fondo-pagina) !important;
     animation: fadeIn 0.5s ease-in-out;
@@ -23,12 +21,10 @@ body {
     }
 }
 
-
-/* 2. ESTILOS Y EFECTOS DE LAS TARJETAS (CARDS) */
-
+/* ESTILOS Y EFECTOS DE LAS TARJETAS (CARDS) */
 .card {
-    background-color: var(--fondo-tarjetas) !important; /* Asigna el azul oscuro a las tarjetas */
-    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Borde */
+    background-color: var(--fondo-tarjetas) !important; /* Aplica el tono oscuro a las tarjetas */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Borde sutil */
     border-radius: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -38,12 +34,31 @@ body {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important;
 }
 
+/* Estilo visual verde suave cuando una tarea se marca como completada */
+.card.task-completed {
+    background-color: rgba(46, 204, 113, 0.13) !important;
+    border-color: rgba(46, 204, 113, 0.55) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
 
-/* 3. EFECTOS EN LOS CONTADORES (BADGES) */
+.card.task-completed .card-title {
+    color: #8ce9b0;
+}
 
+/* Base preparada para modo claro cuando se quite data-bs-theme="dark" */
+body:not([data-bs-theme="dark"]) .card.task-completed {
+    background-color: rgba(46, 204, 113, 0.16) !important;
+    border-color: rgba(25, 135, 84, 0.45) !important;
+}
+
+body:not([data-bs-theme="dark"]) .card.task-completed .card-title {
+    color: #146c43;
+}
+
+/* EFECTOS EN LOS CONTADORES / ETIQUETAS (BADGES) */
 .badge {
-    border-radius: 50rem; /* Vuelve los badges completamente redondeados (tipo píldora) */
-    padding: 0.4em 0.65em; /* Añade espacio para que se vean proporcionados */
+    border-radius: 50rem; /* Forma de píldora */
+    padding: 0.4em 0.65em;
     transition: all 0.2s ease-in-out;
 }
 
@@ -53,18 +68,26 @@ body {
     cursor: pointer;
 }
 
-
-/* 4. ESTILOS DE CAMPOS DEL FORMULARIO (INPUTS Y TEXTAREAS) */
-
+/* ESTILOS DE CAMPOS DEL FORMULARIO */
 .form-control {
-    border-radius: 0.95rem; /* Ajusta la curvatura de las esquinas de los espacios del formulario */
+    border-radius: 0.95rem; /* Bordes redondeados en inputs y textarea */
 }
 
-
-/* 5. ESTILOS DE BOTONES MÁS REDONDOS */
-
+/* ESTILOS DE BOTONES GENERALES */
 .btn {
-    border-radius: 50rem; /* Vuelve los botones tipo píldora/redondos */
+    border-radius: 50rem; /* Botones redondeados tipo píldora */
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+}
+
+/* Botones circulares compactos de acción en la esquina superior de cada tarjeta */
+.btn-toggle-complete,
+.delete-button {
+    width: 32px;
+    height: 32px;
+    padding: 0 !important; /* Evita que el padding general de .btn deforme el círculo */
+    border-radius: 50% !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
