@@ -14,3 +14,10 @@ El Planificador de Tareas es una herramienta web orientada a la organización pe
 * Validación de entradas de formulario mediante la función `validFormFieldInput(data)`.
 * Retroalimentación visual inmediata mediante alertas dinámicas de error.
 * Renderizado dinámico de tarjetas de tareas y gestión de rangos de fechas.
+
+### Sprint 2 — Gestión con `TaskManager`, Estado, Eliminación y Persistencia
+- **Clase `TaskManager` (`js/taskManager.js`):** administra la colección `this.tasks` y el contador incremental `currentId` con métodos organizados (`addTask`, `toggleTaskStatus`, `deleteTask`, `createTaskHtml`, `render`, `save` y `load`).
+- **Renderizado dinámico y vista diaria (`js/app.js`):** pinta las tarjetas en **LISTA DE TAREAS** y filtra en **MIS TAREAS HOY** las tareas activas para la fecha actual que aún no estén completadas.
+- **Estado de completado y fechas:** alterna el estado entre `PORHACER` y `COMPLETADA` (actualizando la apariencia de la tarjeta y retirando las tareas completadas de **MIS TAREAS HOY**), con soporte para fecha única o rango en formato corto (`DD/MM`).
+- **Eliminación de tareas:** botón circular de eliminar en cada tarjeta (`delete-button`) con confirmación previa, eliminación por `id` mediante `deleteTask(taskId)` y actualización inmediata de la vista y `localStorage`.
+- **Persistencia en `localStorage`:** guarda y recupera automáticamente las tareas y el identificador actual al recargar la página.
